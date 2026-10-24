@@ -60,7 +60,7 @@ const repeatStr = (num: number, str: string) => {
   return str.repeat(num);
 };
 
-console.log(repeatStr(3, "Hello"));
+console.log(repeatStr(3, " Hello"));
 
 // Problem 5: Reverse String
 // Time Complexity: O(n)
@@ -377,15 +377,15 @@ console.log(chars18);
 // Time Complexity: O(n)
 // Space Complexity: O(1)
 
-const lengthOfLastWord = (s: string) => {
-  let i = s.length - 1;
+const lengthOfLastWord = (str: string) => {
+  let i = str.length - 1;
   let length = 0;
 
-  while (i >= 0 && s[i] === " ") {
+  while (i >= 0 && str[i] === " ") {
     i--;
   }
 
-  while (i >= 0 && s[i] !== " ") {
+  while (i >= 0 && str[i] !== " ") {
     length++;
     i--;
   }
