@@ -2,30 +2,31 @@
 // Time Complexity: O(n²)
 // Space Complexity: O(n²)
 
-const staircase = (n: number) => {
-  let result = [];
+var staircase = (n: number) => {
+  var result = [];
 
-  for (let i = 1; i <= n; i++) {
-    const spaces = " ".repeat(n - i);
-    const hashes = "#".repeat(i);
+  for (var i = 1; i <= n; i++) {
+    var spaces = " ".repeat(n - i);
+    var hashes = "#".repeat(i);
     result.push(spaces + hashes);
   }
 
   return result.join("\n");
 };
+
 console.log(staircase(4));
 
 // Problem 2: Grading Students
 // Time Complexity: O(n)
 // Space Complexity: O(n)
 
-const gradingStudents = (grades: number[]) => {
+var gradingStudents = (grades: number[]) => {
   return grades.map((grade) => {
     if (grade < 38) {
       return grade;
     }
 
-    const nextMultiple = Math.ceil(grade / 5) * 5;
+    var nextMultiple = Math.ceil(grade / 5) * 5;
 
     return nextMultiple - grade < 3 ? nextMultiple : grade;
   });
@@ -37,9 +38,9 @@ console.log(gradingStudents([73, 67, 38, 33]));
 // Time Complexity: O(1)
 // Space Complexity: O(1)
 
-const timeConversion = (str: string) => {
-  const period = str.slice(-2);
-  let [hours, minutes, seconds] = str.slice(0, -2).split(":");
+var timeConversion = (str: string) => {
+  var period = str.slice(-2);
+  var [hours, minutes, seconds] = str.slice(0, -2).split(":");
 
   if (period === "AM" && hours === "12") {
     hours = "00";
@@ -56,7 +57,7 @@ console.log(timeConversion("07:05:45PM"));
 // Time Complexity: O(n × s.length)
 // Space Complexity: O(n × s.length)
 
-const repeatStr = (num: number, str: string) => {
+var repeatStr = (num: number, str: string) => {
   return str.repeat(num);
 };
 
@@ -66,7 +67,7 @@ console.log(repeatStr(3, " Hello"));
 // Time Complexity: O(n)
 // Space Complexity: O(n)
 
-const solution = (str: string) => {
+var solution = (str: string) => {
   return str.split("").reverse().join("");
 };
 
@@ -76,10 +77,10 @@ console.log(solution("world"));
 // Time Complexity: O(n)
 // Space Complexity: O(1)
 
-const positiveSum = (arr: number[]) => {
-  let sum = 0;
+var positiveSum = (arr: number[]) => {
+  var sum = 0;
 
-  for (const number of arr) {
+  for (var number of arr) {
     if (number > 0) {
       sum += number;
     }
@@ -94,7 +95,7 @@ console.log(positiveSum([1, -4, 7, 12]));
 // Time Complexity: O(1)
 // Space Complexity: O(1)
 
-const summation = (num: number) => {
+var summation = (num: number) => {
   return (num * (num + 1)) / 2;
 };
 
@@ -104,7 +105,7 @@ console.log(summation(8));
 // Time Complexity: O(1)
 // Space Complexity: O(1)
 
-const booleanToString = (b: boolean) => {
+var booleanToString = (b: boolean) => {
   return String(b);
 };
 
@@ -115,10 +116,10 @@ console.log(booleanToString(false));
 // Time Complexity: O(n)
 // Space Complexity: O(n)
 
-const fizzBuzz = (num: number) => {
-  let result = [];
+var fizzBuzz = (num: number) => {
+  var result = [];
 
-  for (let i = 1; i <= num; i++) {
+  for (var i = 1; i <= num; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
       result.push("FizzBuzz");
     } else if (i % 3 === 0) {
@@ -139,11 +140,11 @@ console.log(fizzBuzz(15));
 // Time Complexity: O(n)
 // Space Complexity: O(n)
 
-const runningSum = (nums: number[]) => {
-  let result = [];
-  let sum = 0;
+var runningSum = (nums: number[]) => {
+  var result = [];
+  var sum = 0;
 
-  for (const num of nums) {
+  for (var num of nums) {
     sum += num;
     result.push(sum);
   }
@@ -157,13 +158,13 @@ console.log(runningSum([1, 2, 3, 4]));
 // Time Complexity: O(m × n)
 // Space Complexity: O(1)
 
-const maximumWealth = (accounts: number[][]) => {
-  let maxWealth = 0;
+var maximumWealth = (accounts: number[][]) => {
+  var maxWealth = 0;
 
-  for (const customer of accounts) {
-    let wealth = 0;
+  for (var customer of accounts) {
+    var wealth = 0;
 
-    for (const money of customer) {
+    for (var money of customer) {
       wealth += money;
     }
 
@@ -186,14 +187,14 @@ console.log(
 // Time Complexity: O(n)
 // Space Complexity: O(1) auxiliary
 
-const removeDuplicates = (nums: number[]) => {
+var removeDuplicates = (nums: number[]) => {
   if (nums.length === 0) {
     return 0;
   }
 
-  let uniqueIndex = 1;
+  var uniqueIndex = 1;
 
-  for (let i = 1; i < nums.length; i++) {
+  for (var i = 1; i < nums.length; i++) {
     if (nums[i] !== nums[i - 1]) {
       nums[uniqueIndex] = nums[i];
       uniqueIndex++;
@@ -203,9 +204,10 @@ const removeDuplicates = (nums: number[]) => {
   return uniqueIndex;
 };
 
-const nums12 = [1, 1, 2, 2, 3];
+var nums12 = [1, 1, 2, 2, 3];
 
-const uniqueCount = removeDuplicates(nums12);
+var uniqueCount = removeDuplicates(nums12);
+
 console.log("Unique count:", uniqueCount);
 console.log("Unique elements:", nums12.slice(0, uniqueCount));
 
@@ -213,10 +215,10 @@ console.log("Unique elements:", nums12.slice(0, uniqueCount));
 // Time Complexity: O(n) average
 // Space Complexity: O(n)
 
-const containsDuplicate = (nums: number[]) => {
-  const seen = new Set();
+var containsDuplicate = (nums: number[]) => {
+  var seen = new Set<number>();
 
-  for (const num of nums) {
+  for (var num of nums) {
     if (seen.has(num)) {
       return true;
     }
@@ -234,10 +236,10 @@ console.log(containsDuplicate([1, 2, 3, 4]));
 // Time Complexity: O(n)
 // Space Complexity: O(1) auxiliary
 
-const moveZeroes = (nums: number[]) => {
-  let insertIndex = 0;
+var moveZeroes = (nums: number[]) => {
+  var insertIndex = 0;
 
-  for (let i = 0; i < nums.length; i++) {
+  for (var i = 0; i < nums.length; i++) {
     if (nums[i] !== 0) {
       nums[insertIndex] = nums[i];
       insertIndex++;
@@ -250,7 +252,7 @@ const moveZeroes = (nums: number[]) => {
   }
 };
 
-const nums14 = [0, 1, 0, 3, 12];
+var nums14 = [0, 1, 0, 3, 12];
 
 moveZeroes(nums14);
 console.log(nums14);
@@ -259,10 +261,10 @@ console.log(nums14);
 // Time Complexity: O(m + n)
 // Space Complexity: O(1) auxiliary
 
-const merge = (nums1: number[], m: number, nums2: number[], n: number) => {
-  let i = m - 1;
-  let j = n - 1;
-  let k = m + n - 1;
+var merge = (nums1: number[], m: number, nums2: number[], n: number) => {
+  var i = m - 1;
+  var j = n - 1;
+  var k = m + n - 1;
 
   while (j >= 0) {
     if (i >= 0 && nums1[i] > nums2[j]) {
@@ -277,8 +279,8 @@ const merge = (nums1: number[], m: number, nums2: number[], n: number) => {
   }
 };
 
-const nums1 = [1, 2, 3, 0, 0, 0];
-const nums2 = [2, 5, 6];
+var nums1 = [1, 2, 3, 0, 0, 0];
+var nums2 = [2, 5, 6];
 
 merge(nums1, 3, nums2, 3);
 console.log(nums1);
@@ -288,24 +290,25 @@ console.log(nums1);
 // Space Complexity: O(log n) auxiliary for typical sort,
 // excluding returned triplets
 
-const threeSum = (nums: number[]) => {
+var threeSum = (nums: number[]) => {
   nums.sort((a, b) => a - b);
 
-  let result = [];
+  var result: number[][] = [];
 
-  for (let i = 0; i < nums.length - 2; i++) {
+  for (var i = 0; i < nums.length - 2; i++) {
     if (i > 0 && nums[i] === nums[i - 1]) {
       continue;
     }
 
-    let left = i + 1;
-    let right = nums.length - 1;
+    var left = i + 1;
+    var right = nums.length - 1;
 
     while (left < right) {
-      const sum = nums[i] + nums[left] + nums[right];
+      var sum = nums[i] + nums[left] + nums[right];
 
       if (sum === 0) {
         result.push([nums[i], nums[left], nums[right]]);
+
         left++;
         right--;
 
@@ -333,8 +336,8 @@ console.log(threeSum([-1, 0, 1, 2, -1, -4]));
 // Time Complexity: O(n)
 // Space Complexity: O(1) auxiliary, excluding possible extra digit
 
-const plusOne = (digits: number[]) => {
-  for (let i = digits.length - 1; i >= 0; i--) {
+var plusOne = (digits: number[]) => {
+  for (var i = digits.length - 1; i >= 0; i--) {
     if (digits[i] < 9) {
       digits[i]++;
       return digits;
@@ -355,12 +358,12 @@ console.log(plusOne([9, 9, 9]));
 // Time Complexity: O(n)
 // Space Complexity: O(1) auxiliary
 
-const reverseString = (s: string[]) => {
-  let left = 0;
-  let right = s.length - 1;
+var reverseString = (s: string[]) => {
+  var left = 0;
+  var right = s.length - 1;
 
   while (left < right) {
-    const temp = s[left];
+    var temp = s[left];
     s[left] = s[right];
     s[right] = temp;
 
@@ -369,7 +372,8 @@ const reverseString = (s: string[]) => {
   }
 };
 
-const chars18 = ["h", "e", "l", "l", "o"];
+var chars18 = ["h", "e", "l", "l", "o"];
+
 reverseString(chars18);
 console.log(chars18);
 
@@ -377,9 +381,9 @@ console.log(chars18);
 // Time Complexity: O(n)
 // Space Complexity: O(1)
 
-const lengthOfLastWord = (str: string) => {
-  let i = str.length - 1;
-  let length = 0;
+var lengthOfLastWord = (str: string) => {
+  var i = str.length - 1;
+  var length = 0;
 
   while (i >= 0 && str[i] === " ") {
     i--;
@@ -400,14 +404,14 @@ console.log(lengthOfLastWord("   fly me   to   the moon  "));
 // Time Complexity: O(n × m)
 // Space Complexity: O(m)
 
-const longestCommonPrefix = (strs: string[]) => {
+var longestCommonPrefix = (strs: string[]) => {
   if (strs.length === 0) {
     return "";
   }
 
-  let prefix = strs[0];
+  var prefix = strs[0];
 
-  for (let i = 1; i < strs.length; i++) {
+  for (var i = 1; i < strs.length; i++) {
     while (!strs[i].startsWith(prefix)) {
       prefix = prefix.slice(0, -1);
 
